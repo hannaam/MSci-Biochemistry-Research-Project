@@ -1,0 +1,1288 @@
+Log file opened on Thu Apr  9 17:17:22 2020
+Host: Hannas-MacBook-Air.local  pid: 1856  rank ID: 0  number of ranks:  1
+                      :-) GROMACS - gmx mdrun, 2018.3 (-:
+
+                            GROMACS is written by:
+     Emile Apol      Rossen Apostolov      Paul Bauer     Herman J.C. Berendsen
+    Par Bjelkmar    Aldert van Buuren   Rudi van Drunen     Anton Feenstra  
+  Gerrit Groenhof    Aleksei Iupinov   Christoph Junghans   Anca Hamuraru   
+ Vincent Hindriksen Dimitrios Karkoulis    Peter Kasson        Jiri Kraus    
+  Carsten Kutzner      Per Larsson      Justin A. Lemkul    Viveca Lindahl  
+  Magnus Lundborg   Pieter Meulenhoff    Erik Marklund      Teemu Murtola   
+    Szilard Pall       Sander Pronk      Roland Schulz     Alexey Shvetsov  
+   Michael Shirts     Alfons Sijbers     Peter Tieleman    Teemu Virolainen 
+ Christian Wennberg    Maarten Wolf   
+                           and the project leaders:
+        Mark Abraham, Berk Hess, Erik Lindahl, and David van der Spoel
+
+Copyright (c) 1991-2000, University of Groningen, The Netherlands.
+Copyright (c) 2001-2017, The GROMACS development team at
+Uppsala University, Stockholm University and
+the Royal Institute of Technology, Sweden.
+check out http://www.gromacs.org for more information.
+
+GROMACS is free software; you can redistribute it and/or modify it
+under the terms of the GNU Lesser General Public License
+as published by the Free Software Foundation; either version 2.1
+of the License, or (at your option) any later version.
+
+GROMACS:      gmx mdrun, version 2018.3
+Executable:   /usr/local/gromacs/bin/gmx
+Data prefix:  /usr/local/gromacs
+Working dir:  /Users/hannaalmetrami/Desktop/MSci-Biochemistry-Research-Project/B1AR_TM1TM1_example
+Command line:
+  gmx mdrun -deffnm minim-vacuum -v
+
+GROMACS version:    2018.3
+Precision:          single
+Memory model:       64 bit
+MPI library:        thread_mpi
+OpenMP support:     disabled
+GPU support:        disabled
+SIMD instructions:  NONE
+FFT library:        fftw-3.3.8
+RDTSCP usage:       disabled
+TNG support:        enabled
+Hwloc support:      disabled
+Tracing support:    disabled
+Built on:           2019-10-02 15:32:01
+Built by:           hannaalmetrami@eduroam-int-dhcp-97-32-91.ucl.ac.uk [CMAKE]
+Build OS/arch:      Darwin 15.6.0 x86_64
+Build CPU vendor:   Unknown
+Build CPU brand:    Unknown
+Build CPU family:   0   Model: 0   Stepping: 0
+Build CPU features: Unknown
+C compiler:         /Library/Developer/CommandLineTools/usr/bin/cc AppleClang 8.0.0.8000042
+C compiler flags:       -Wno-unknown-pragmas  -O3 -DNDEBUG  
+C++ compiler:       /Library/Developer/CommandLineTools/usr/bin/c++ AppleClang 8.0.0.8000042
+C++ compiler flags:     -std=c++11  -Wno-unknown-pragmas  -O3 -DNDEBUG  
+
+
+Running on 1 node with total 4 cores, 4 logical cores
+Hardware detected:
+  CPU info:
+    Vendor: Intel
+    Brand:  Intel(R) Core(TM) i5-5250U CPU @ 1.60GHz
+    Family: 6   Model: 61   Stepping: 4
+    Features: aes apic avx avx2 clfsh cmov cx8 cx16 f16c fma htt intel lahf mmx msr nonstop_tsc pcid pclmuldq pdcm pdpe1gb popcnt pse rdrnd rdtscp sse2 sse3 sse4.1 sse4.2 ssse3 tdt x2apic
+  Hardware topology: Only logical processor count
+
+Highest SIMD level requested by all nodes in run: AVX2_256
+SIMD instructions selected at compile time:       None
+This program was compiled for different hardware than you are running on,
+which could influence performance.
+The current CPU can measure timings more accurately than the code in
+gmx mdrun was configured to use. This might affect your simulation
+speed as accurate timings are needed for load-balancing.
+Please consider rebuilding gmx mdrun with the GMX_USE_RDTSCP=ON CMake option.
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+M. J. Abraham, T. Murtola, R. Schulz, S. Páll, J. C. Smith, B. Hess, E.
+Lindahl
+GROMACS: High performance molecular simulations through multi-level
+parallelism from laptops to supercomputers
+SoftwareX 1 (2015) pp. 19-25
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+S. Páll, M. J. Abraham, C. Kutzner, B. Hess, E. Lindahl
+Tackling Exascale Software Challenges in Molecular Dynamics Simulations with
+GROMACS
+In S. Markidis & E. Laure (Eds.), Solving Software Challenges for Exascale 8759 (2015) pp. 3-27
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+S. Pronk, S. Páll, R. Schulz, P. Larsson, P. Bjelkmar, R. Apostolov, M. R.
+Shirts, J. C. Smith, P. M. Kasson, D. van der Spoel, B. Hess, and E. Lindahl
+GROMACS 4.5: a high-throughput and highly parallel open source molecular
+simulation toolkit
+Bioinformatics 29 (2013) pp. 845-54
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+B. Hess and C. Kutzner and D. van der Spoel and E. Lindahl
+GROMACS 4: Algorithms for highly efficient, load-balanced, and scalable
+molecular simulation
+J. Chem. Theory Comput. 4 (2008) pp. 435-447
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+D. van der Spoel, E. Lindahl, B. Hess, G. Groenhof, A. E. Mark and H. J. C.
+Berendsen
+GROMACS: Fast, Flexible and Free
+J. Comp. Chem. 26 (2005) pp. 1701-1719
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+E. Lindahl and B. Hess and D. van der Spoel
+GROMACS 3.0: A package for molecular simulation and trajectory analysis
+J. Mol. Mod. 7 (2001) pp. 306-317
+-------- -------- --- Thank You --- -------- --------
+
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+H. J. C. Berendsen, D. van der Spoel and R. van Drunen
+GROMACS: A message-passing parallel molecular dynamics implementation
+Comp. Phys. Comm. 91 (1995) pp. 43-56
+-------- -------- --- Thank You --- -------- --------
+
+Input Parameters:
+   integrator                     = steep
+   tinit                          = 0
+   dt                             = 0.001
+   nsteps                         = 100
+   init-step                      = 0
+   simulation-part                = 1
+   comm-mode                      = Linear
+   nstcomm                        = 100
+   bd-fric                        = 0
+   ld-seed                        = 1177906721
+   emtol                          = 10
+   emstep                         = 0.01
+   niter                          = 20
+   fcstep                         = 0
+   nstcgsteep                     = 1000
+   nbfgscorr                      = 10
+   rtpi                           = 0.05
+   nstxout                        = 0
+   nstvout                        = 0
+   nstfout                        = 0
+   nstlog                         = 1000
+   nstcalcenergy                  = 100
+   nstenergy                      = 1000
+   nstxout-compressed             = 0
+   compressed-x-precision         = 1000
+   cutoff-scheme                  = Verlet
+   nstlist                        = 10
+   ns-type                        = Grid
+   pbc                            = xyz
+   periodic-molecules             = false
+   verlet-buffer-tolerance        = 0.005
+   rlist                          = 1.26
+   coulombtype                    = PME
+   coulomb-modifier               = Potential-shift
+   rcoulomb-switch                = 0
+   rcoulomb                       = 1.2
+   epsilon-r                      = 15
+   epsilon-rf                     = inf
+   vdw-type                       = Cut-off
+   vdw-modifier                   = Potential-shift
+   rvdw-switch                    = 0.9
+   rvdw                           = 1.2
+   DispCorr                       = No
+   table-extension                = 1
+   fourierspacing                 = 0.12
+   fourier-nx                     = 48
+   fourier-ny                     = 52
+   fourier-nz                     = 80
+   pme-order                      = 4
+   ewald-rtol                     = 1e-05
+   ewald-rtol-lj                  = 0.001
+   lj-pme-comb-rule               = Geometric
+   ewald-geometry                 = 0
+   epsilon-surface                = 0
+   implicit-solvent               = No
+   gb-algorithm                   = Still
+   nstgbradii                     = 1
+   rgbradii                       = 1
+   gb-epsilon-solvent             = 80
+   gb-saltconc                    = 0
+   gb-obc-alpha                   = 1
+   gb-obc-beta                    = 0.8
+   gb-obc-gamma                   = 4.85
+   gb-dielectric-offset           = 0.009
+   sa-algorithm                   = Ace-approximation
+   sa-surface-tension             = 2.05016
+   tcoupl                         = No
+   nsttcouple                     = -1
+   nh-chain-length                = 0
+   print-nose-hoover-chain-variables = false
+   pcoupl                         = No
+   pcoupltype                     = Isotropic
+   nstpcouple                     = -1
+   tau-p                          = 1
+   compressibility (3x3):
+      compressibility[    0]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      compressibility[    1]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      compressibility[    2]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+   ref-p (3x3):
+      ref-p[    0]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      ref-p[    1]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      ref-p[    2]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+   refcoord-scaling               = No
+   posres-com (3):
+      posres-com[0]= 0.00000e+00
+      posres-com[1]= 0.00000e+00
+      posres-com[2]= 0.00000e+00
+   posres-comB (3):
+      posres-comB[0]= 0.00000e+00
+      posres-comB[1]= 0.00000e+00
+      posres-comB[2]= 0.00000e+00
+   QMMM                           = false
+   QMconstraints                  = 0
+   QMMMscheme                     = 0
+   MMChargeScaleFactor            = 1
+qm-opts:
+   ngQM                           = 0
+   constraint-algorithm           = Lincs
+   continuation                   = false
+   Shake-SOR                      = false
+   shake-tol                      = 0.0001
+   lincs-order                    = 4
+   lincs-iter                     = 1
+   lincs-warnangle                = 30
+   nwall                          = 0
+   wall-type                      = 9-3
+   wall-r-linpot                  = -1
+   wall-atomtype[0]               = -1
+   wall-atomtype[1]               = -1
+   wall-density[0]                = 0
+   wall-density[1]                = 0
+   wall-ewald-zfac                = 3
+   pull                           = false
+   awh                            = false
+   rotation                       = false
+   interactiveMD                  = false
+   disre                          = No
+   disre-weighting                = Conservative
+   disre-mixed                    = false
+   dr-fc                          = 1000
+   dr-tau                         = 0
+   nstdisreout                    = 100
+   orire-fc                       = 0
+   orire-tau                      = 0
+   nstorireout                    = 100
+   free-energy                    = no
+   cos-acceleration               = 0
+   deform (3x3):
+      deform[    0]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      deform[    1]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+      deform[    2]={ 0.00000e+00,  0.00000e+00,  0.00000e+00}
+   simulated-tempering            = false
+   swapcoords                     = no
+   userint1                       = 0
+   userint2                       = 0
+   userint3                       = 0
+   userint4                       = 0
+   userreal1                      = 0
+   userreal2                      = 0
+   userreal3                      = 0
+   userreal4                      = 0
+   applied-forces:
+     electric-field:
+       x:
+         E0                       = 0
+         omega                    = 0
+         t0                       = 0
+         sigma                    = 0
+       y:
+         E0                       = 0
+         omega                    = 0
+         t0                       = 0
+         sigma                    = 0
+       z:
+         E0                       = 0
+         omega                    = 0
+         t0                       = 0
+         sigma                    = 0
+grpopts:
+   nrdf:         225
+   ref-t:           0
+   tau-t:           0
+annealing:          No
+annealing-npoints:           0
+   acc:	           0           0           0
+   nfreeze:           N           N           N
+   energygrp-flags[  0]: 0
+
+
+Using 1 MPI thread
+System total charge: 0.000
+Will do PME sum in reciprocal space for electrostatic interactions.
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+U. Essmann, L. Perera, M. L. Berkowitz, T. Darden, H. Lee and L. G. Pedersen 
+A smooth particle mesh Ewald method
+J. Chem. Phys. 103 (1995) pp. 8577-8592
+-------- -------- --- Thank You --- -------- --------
+
+Using a Gaussian width (1/beta) of 0.384195 nm for Ewald
+Potential shift: LJ r^-12: -1.122e-01 r^-6: -3.349e-01, Ewald -8.333e-06
+Initialized non-bonded Ewald correction tables, spacing: 1.02e-03 size: 1176
+
+
+Using plain C 4x4 nonbonded short-range kernels
+
+WARNING: Using the slow plain C kernels. This should
+not happen during routine usage on supported platforms.
+
+Using a 4x4 pair-list setup:
+  updated every 10 steps, buffer 0.060 nm, rlist 1.260 nm
+
+Using full Lennard-Jones parameter combination matrix
+
+Removing pbc first time
+
+Initializing LINear Constraint Solver
+
+++++ PLEASE READ AND CITE THE FOLLOWING REFERENCE ++++
+B. Hess
+P-LINCS: A Parallel Linear Constraint Solver for molecular simulation
+J. Chem. Theory Comput. 4 (2008) pp. 116-122
+-------- -------- --- Thank You --- -------- --------
+
+The number of constraints is 84
+10 constraints are involved in constraint triangles,
+will apply an additional matrix expansion of order 4 for couplings
+between constraints inside triangles
+Initiating Steepest Descents
+   Rel. Constraint Deviation:  RMS         MAX     between atoms
+       Before LINCS          0.079104    0.256949     57     58
+        After LINCS          0.000692    0.003662     57     58
+
+Started Steepest Descents on rank 0 Thu Apr  9 17:17:22 2020
+
+Steepest Descents:
+   Tolerance (Fmax)   =  1.00000e+01
+   Number of steps    =          100
+           Step           Time
+              0        0.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    4.99215e+01    1.65024e+00    1.44299e+02    8.36270e+01    1.43166e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -5.74297e+02   -5.44070e+01    5.50455e+01   -2.79844e+02   -7.54539e+01
+   Constr. rmsd
+    6.92308e-04
+
+           Step           Time
+              1        1.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    4.89388e+01    2.18310e+00    1.21842e+02    7.09135e+01    1.38058e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -6.81941e+02   -5.44070e+01    5.50503e+01   -4.23615e+02   -7.44427e+01
+   Constr. rmsd
+    2.06684e-06
+
+           Step           Time
+              2        2.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    4.76100e+01    3.84814e+00    1.01584e+02    6.15985e+01    1.32223e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -7.78882e+02   -5.44070e+01    5.50585e+01   -5.50368e+02   -7.29412e+01
+   Constr. rmsd
+    3.77224e-06
+
+           Step           Time
+              3        3.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    4.38979e+01    7.33954e+00    9.14211e+01    5.57971e+01    1.25212e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -8.59364e+02   -5.44070e+01    5.50741e+01   -6.47720e+02   -7.16291e+01
+   Constr. rmsd
+    6.93258e-06
+
+           Step           Time
+              4        4.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    2.96008e+01    1.07906e+01    9.27272e+01    4.78471e+01    1.16026e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.10573e+02   -5.44070e+01    5.51045e+01   -7.17307e+02   -7.01023e+01
+   Constr. rmsd
+    2.06575e-05
+
+           Step           Time
+              5        5.00000
+
+           Step           Time
+              6        6.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    2.48870e+01    1.36761e+01    8.93213e+01    4.75686e+01    1.15839e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.17615e+02   -5.44070e+01    5.51117e+01   -7.29873e+02   -6.81004e+01
+   Constr. rmsd
+    1.37019e-05
+
+           Step           Time
+              7        7.00000
+
+           Step           Time
+              8        8.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    2.21662e+01    1.21881e+01    8.67322e+01    4.06634e+01    1.14238e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.22917e+02   -5.44070e+01    5.51153e+01   -7.49035e+02   -6.87763e+01
+   Constr. rmsd
+    5.78941e-06
+
+           Step           Time
+              9        9.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    1.77049e+01    1.40744e+01    8.68078e+01    4.08738e+01    1.11571e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.28047e+02   -5.44070e+01    5.51234e+01   -7.56712e+02   -6.76237e+01
+   Constr. rmsd
+    5.71592e-06
+
+           Step           Time
+             10       10.00000
+
+           Step           Time
+             11       11.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    1.59696e+01    1.35483e+01    8.58171e+01    3.76049e+01    1.10125e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.31525e+02   -5.44070e+01    5.51266e+01   -7.66853e+02   -6.80692e+01
+   Constr. rmsd
+    5.10879e-06
+
+           Step           Time
+             12       12.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    1.34874e+01    1.53629e+01    8.71920e+01    3.91994e+01    1.07025e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.34197e+02   -5.44070e+01    5.51322e+01   -7.67528e+02   -6.71216e+01
+   Constr. rmsd
+    7.48640e-06
+
+           Step           Time
+             13       13.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    1.22529e+01    1.47318e+01    8.73917e+01    3.78473e+01    1.05233e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.37017e+02   -5.44070e+01    5.51353e+01   -7.73542e+02   -6.74960e+01
+   Constr. rmsd
+    1.12444e-05
+
+           Step           Time
+             14       14.00000
+
+           Step           Time
+             15       15.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    1.15152e+01    1.54946e+01    8.40393e+01    3.40039e+01    1.03956e+01
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.40089e+02   -5.44070e+01    5.51370e+01   -7.83910e+02   -6.71449e+01
+   Constr. rmsd
+    4.19479e-06
+
+           Step           Time
+             16       16.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    9.83869e+00    1.60577e+01    8.54601e+01    3.46099e+01    9.99889e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.43425e+02   -5.44070e+01    5.51424e+01   -7.86724e+02   -6.69705e+01
+   Constr. rmsd
+    3.93139e-06
+
+           Step           Time
+             17       17.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    9.13883e+00    1.72220e+01    8.58435e+01    3.47156e+01    9.76512e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.44628e+02   -5.44070e+01    5.51449e+01   -7.87206e+02   -6.63599e+01
+   Constr. rmsd
+    8.33859e-06
+
+           Step           Time
+             18       18.00000
+
+           Step           Time
+             19       19.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    8.79677e+00    1.68601e+01    8.33087e+01    3.14749e+01    9.66228e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.47532e+02   -5.44070e+01    5.51460e+01   -7.96690e+02   -6.65141e+01
+   Constr. rmsd
+    3.25473e-06
+
+           Step           Time
+             20       20.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    7.75421e+00    1.78788e+01    8.34830e+01    3.08532e+01    9.23124e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.50610e+02   -5.44070e+01    5.51501e+01   -8.00667e+02   -6.61120e+01
+   Constr. rmsd
+    2.58054e-06
+
+           Step           Time
+             21       21.00000
+
+           Step           Time
+             22       22.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    7.58198e+00    1.77884e+01    8.30702e+01    3.03191e+01    9.08097e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.52218e+02   -5.44070e+01    5.51515e+01   -8.03633e+02   -6.60518e+01
+   Constr. rmsd
+    2.10040e-06
+
+           Step           Time
+             23       23.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    7.09740e+00    1.84897e+01    8.34159e+01    3.01823e+01    8.81494e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.53656e+02   -5.44070e+01    5.51536e+01   -8.04909e+02   -6.57012e+01
+   Constr. rmsd
+    2.82800e-06
+
+           Step           Time
+             24       24.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    7.02795e+00    1.83304e+01    8.34341e+01    3.03113e+01    8.63432e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.55162e+02   -5.44070e+01    5.51551e+01   -8.06676e+02   -6.56861e+01
+   Constr. rmsd
+    3.49982e-06
+
+           Step           Time
+             25       25.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    6.61178e+00    1.90719e+01    8.38722e+01    3.01969e+01    8.42097e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.55990e+02   -5.44070e+01    5.51565e+01   -8.07067e+02   -6.53173e+01
+   Constr. rmsd
+    4.96214e-06
+
+           Step           Time
+             26       26.00000
+
+           Step           Time
+             27       27.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    6.56952e+00    1.88406e+01    8.23066e+01    2.84552e+01    8.32825e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.57794e+02   -5.44070e+01    5.51573e+01   -8.12544e+02   -6.53962e+01
+   Constr. rmsd
+    2.07811e-06
+
+           Step           Time
+             28       28.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    6.16387e+00    1.93593e+01    8.22528e+01    2.79062e+01    7.97946e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.59973e+02   -5.44070e+01    5.51596e+01   -8.15559e+02   -6.51019e+01
+   Constr. rmsd
+    1.91869e-06
+
+           Step           Time
+             29       29.00000
+
+           Step           Time
+             30       30.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    6.12264e+00    1.93769e+01    8.21648e+01    2.78568e+01    7.80369e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.61214e+02   -5.44070e+01    5.51608e+01   -8.17136e+02   -6.50283e+01
+   Constr. rmsd
+    1.54875e-06
+
+           Step           Time
+             31       31.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    5.85619e+00    1.97686e+01    8.22387e+01    2.75040e+01    7.61046e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.62220e+02   -5.44070e+01    5.51618e+01   -8.18487e+02   -6.47855e+01
+   Constr. rmsd
+    1.87397e-06
+
+           Step           Time
+             32       32.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    5.90094e+00    1.97025e+01    8.22353e+01    2.77176e+01    7.43635e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.63393e+02   -5.44070e+01    5.51630e+01   -8.19645e+02   -6.47690e+01
+   Constr. rmsd
+    2.19974e-06
+
+           Step           Time
+             33       33.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    5.59287e+00    2.01659e+01    8.24830e+01    2.74236e+01    7.25617e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.64138e+02   -5.44070e+01    5.51639e+01   -8.20460e+02   -6.44819e+01
+   Constr. rmsd
+    3.15914e-06
+
+           Step           Time
+             34       34.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    5.76207e+00    1.99793e+01    8.26310e+01    2.80598e+01    7.09091e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.65184e+02   -5.44070e+01    5.51649e+01   -8.20903e+02   -6.45305e+01
+   Constr. rmsd
+    3.84978e-06
+
+           Step           Time
+             35       35.00000
+
+           Step           Time
+             36       36.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    5.49770e+00    2.02223e+01    8.15599e+01    2.63180e+01    7.00420e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.66264e+02   -5.44070e+01    5.51655e+01   -8.24903e+02   -6.43868e+01
+   Constr. rmsd
+    1.60312e-06
+
+           Step           Time
+             37       37.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    5.38744e+00    2.04192e+01    8.14779e+01    2.61557e+01    6.69912e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.68086e+02   -5.44070e+01    5.51672e+01   -8.27186e+02   -6.42423e+01
+   Constr. rmsd
+    1.75889e-06
+
+           Step           Time
+             38       38.00000
+
+           Step           Time
+             39       39.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    5.21034e+00    2.06626e+01    8.14798e+01    2.58092e+01    6.55248e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.68860e+02   -5.44070e+01    5.51679e+01   -8.28385e+02   -6.40491e+01
+   Constr. rmsd
+    1.43013e-06
+
+           Step           Time
+             40       40.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    5.26518e+00    2.06512e+01    8.14495e+01    2.59744e+01    6.38741e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.69870e+02   -5.44070e+01    5.51689e+01   -8.29381e+02   -6.40304e+01
+   Constr. rmsd
+    1.62507e-06
+
+           Step           Time
+             41       41.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    5.03147e+00    2.09639e+01    8.15794e+01    2.56410e+01    6.23934e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.70537e+02   -5.44070e+01    5.51696e+01   -8.30320e+02   -6.38046e+01
+   Constr. rmsd
+    2.00786e-06
+
+           Step           Time
+             42       42.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    5.18129e+00    2.08606e+01    8.15848e+01    2.60494e+01    6.09286e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.71443e+02   -5.44070e+01    5.51702e+01   -8.30911e+02   -6.38449e+01
+   Constr. rmsd
+    2.56146e-06
+
+           Step           Time
+             43       43.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    4.87245e+00    2.12647e+01    8.19682e+01    2.58192e+01    5.94766e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.71905e+02   -5.44070e+01    5.51709e+01   -8.31269e+02   -6.35573e+01
+   Constr. rmsd
+    3.48517e-06
+
+           Step           Time
+             44       44.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    5.15130e+00    2.10509e+01    8.20616e+01    2.66049e+01    5.81328e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.72721e+02   -5.44070e+01    5.51716e+01   -8.31274e+02   -6.36699e+01
+   Constr. rmsd
+    4.43323e-06
+
+           Step           Time
+             45       45.00000
+
+           Step           Time
+             46       46.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    4.86014e+00    2.12617e+01    8.09326e+01    2.47030e+01    5.74307e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.73758e+02   -5.44070e+01    5.51718e+01   -8.35492e+02   -6.35289e+01
+   Constr. rmsd
+    2.07364e-06
+
+           Step           Time
+             47       47.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    4.83690e+00    2.14225e+01    8.09610e+01    2.48067e+01    5.44184e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.75446e+02   -5.44070e+01    5.51735e+01   -8.37211e+02   -6.34282e+01
+   Constr. rmsd
+    2.31290e-06
+
+           Step           Time
+             48       48.00000
+
+           Step           Time
+             49       49.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    4.66026e+00    2.16186e+01    8.08592e+01    2.43007e+01    5.34816e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.76006e+02   -5.44070e+01    5.51739e+01   -8.38453e+02   -6.32612e+01
+   Constr. rmsd
+    1.60431e-06
+
+           Step           Time
+             50       50.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    4.76608e+00    2.16104e+01    8.09507e+01    2.46884e+01    5.18738e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.76904e+02   -5.44070e+01    5.51746e+01   -8.38934e+02   -6.32587e+01
+   Constr. rmsd
+    2.00568e-06
+
+           Step           Time
+             51       51.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    4.52076e+00    2.18904e+01    8.10517e+01    2.42664e+01    5.07890e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.77409e+02   -5.44070e+01    5.51751e+01   -8.39833e+02   -6.30416e+01
+   Constr. rmsd
+    2.17466e-06
+
+           Step           Time
+             52       52.00000
+
+           Step           Time
+             53       53.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    4.59718e+00    2.18125e+01    8.05557e+01    2.39042e+01    5.01740e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.78107e+02   -5.44070e+01    5.51754e+01   -8.41452e+02   -6.31015e+01
+   Constr. rmsd
+    1.31990e-06
+
+           Step           Time
+             54       54.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    4.46793e+00    2.20147e+01    8.05857e+01    2.36918e+01    4.85010e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.79042e+02   -5.44070e+01    5.51762e+01   -8.42662e+02   -6.29555e+01
+   Constr. rmsd
+    1.61843e-06
+
+           Step           Time
+             55       55.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    4.58508e+00    2.20302e+01    8.07655e+01    2.41964e+01    4.67666e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.79987e+02   -5.44070e+01    5.51769e+01   -8.42963e+02   -6.29374e+01
+   Constr. rmsd
+    2.18162e-06
+
+           Step           Time
+             56       56.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    4.32476e+00    2.23038e+01    8.08413e+01    2.37103e+01    4.58376e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.80451e+02   -5.44070e+01    5.51774e+01   -8.43917e+02   -6.27277e+01
+   Constr. rmsd
+    2.47176e-06
+
+           Step           Time
+             57       57.00000
+
+           Step           Time
+             58       58.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    4.41293e+00    2.22227e+01    8.03284e+01    2.33474e+01    4.52841e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.81133e+02   -5.44070e+01    5.51776e+01   -8.45523e+02   -6.27947e+01
+   Constr. rmsd
+    1.39891e-06
+
+           Step           Time
+             59       59.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    4.28338e+00    2.24229e+01    8.03950e+01    2.31689e+01    4.37918e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.81987e+02   -5.44070e+01    5.51784e+01   -8.46566e+02   -6.26529e+01
+   Constr. rmsd
+    1.68230e-06
+
+           Step           Time
+             60       60.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    4.42914e+00    2.24147e+01    8.05856e+01    2.37344e+01    4.23602e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.82790e+02   -5.44070e+01    5.51791e+01   -8.46619e+02   -6.26616e+01
+   Constr. rmsd
+    2.14447e-06
+
+           Step           Time
+             61       61.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    4.16011e+00    2.26865e+01    8.06843e+01    2.32544e+01    4.15342e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.83219e+02   -5.44070e+01    5.51795e+01   -8.47507e+02   -6.24484e+01
+   Constr. rmsd
+    2.61541e-06
+
+           Step           Time
+             62       62.00000
+
+           Step           Time
+             63       63.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    4.25689e+00    2.25991e+01    8.01306e+01    2.28599e+01    4.10439e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.83899e+02   -5.44070e+01    5.51796e+01   -8.49176e+02   -6.25268e+01
+   Constr. rmsd
+    1.30320e-06
+
+           Step           Time
+             64       64.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    4.13052e+00    2.27946e+01    8.02160e+01    2.27042e+01    3.97077e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.84702e+02   -5.44070e+01    5.51801e+01   -8.50113e+02   -6.23907e+01
+   Constr. rmsd
+    1.71328e-06
+
+           Step           Time
+             65       65.00000
+
+           Step           Time
+             66       66.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    4.19730e+00    2.27753e+01    8.00513e+01    2.26763e+01    3.90671e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.85243e+02   -5.44070e+01    5.51805e+01   -8.50863e+02   -6.24129e+01
+   Constr. rmsd
+    1.21610e-06
+
+           Step           Time
+             67       67.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    4.08089e+00    2.29333e+01    8.01178e+01    2.25056e+01    3.81708e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.85797e+02   -5.44070e+01    5.51808e+01   -8.51568e+02   -6.22939e+01
+   Constr. rmsd
+    1.48619e-06
+
+           Step           Time
+             68       68.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    4.18592e+00    2.29243e+01    8.00980e+01    2.27325e+01    3.71928e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.86495e+02   -5.44070e+01    5.51813e+01   -8.52061e+02   -6.23175e+01
+   Constr. rmsd
+    1.87149e-06
+
+           Step           Time
+             69       69.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    3.98796e+00    2.31450e+01    8.02705e+01    2.24939e+01    3.64232e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.86913e+02   -5.44070e+01    5.51816e+01   -8.52599e+02   -6.21406e+01
+   Constr. rmsd
+    1.94635e-06
+
+           Step           Time
+             70       70.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    4.17464e+00    2.30572e+01    8.01918e+01    2.28327e+01    3.56547e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.87527e+02   -5.44070e+01    5.51819e+01   -8.52931e+02   -6.22310e+01
+   Constr. rmsd
+    2.09496e-06
+
+           Step           Time
+             71       71.00000
+
+           Step           Time
+             72       72.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    4.00951e+00    2.31865e+01    7.98776e+01    2.21158e+01    3.52626e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.87997e+02   -5.44070e+01    5.51821e+01   -8.54507e+02   -6.21278e+01
+   Constr. rmsd
+    1.32873e-06
+
+           Step           Time
+             73       73.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    4.01730e+00    2.32504e+01    7.98104e+01    2.20765e+01    3.43140e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.88737e+02   -5.44070e+01    5.51825e+01   -8.55376e+02   -6.21019e+01
+   Constr. rmsd
+    1.54488e-06
+
+           Step           Time
+             74       74.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    3.89303e+00    2.34434e+01    7.99514e+01    2.19722e+01    3.32166e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.89473e+02   -5.44070e+01    5.51828e+01   -8.56115e+02   -6.19503e+01
+   Constr. rmsd
+    1.79134e-06
+
+           Step           Time
+             75       75.00000
+
+           Step           Time
+             76       76.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    3.97368e+00    2.34076e+01    7.97451e+01    2.19245e+01    3.27241e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.89984e+02   -5.44070e+01    5.51829e+01   -8.56885e+02   -6.20015e+01
+   Constr. rmsd
+    1.25001e-06
+
+           Step           Time
+             77       77.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    3.85952e+00    2.35619e+01    7.98327e+01    2.17773e+01    3.19842e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.90510e+02   -5.44070e+01    5.51833e+01   -8.57504e+02   -6.18785e+01
+   Constr. rmsd
+    1.56113e-06
+
+           Step           Time
+             78       78.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    3.98633e+00    2.35383e+01    7.98438e+01    2.20800e+01    3.11727e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.91159e+02   -5.44070e+01    5.51836e+01   -8.57817e+02   -6.19299e+01
+   Constr. rmsd
+    1.77526e-06
+
+           Step           Time
+             79       79.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    3.77895e+00    2.37598e+01    8.00249e+01    2.18264e+01    3.05622e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.91549e+02   -5.44070e+01    5.51839e+01   -8.58325e+02   -6.17333e+01
+   Constr. rmsd
+    2.10987e-06
+
+           Step           Time
+             80       80.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    3.99207e+00    2.36555e+01    7.99888e+01    2.22641e+01    2.99208e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.92110e+02   -5.44070e+01    5.51841e+01   -8.58440e+02   -6.18595e+01
+   Constr. rmsd
+    2.58165e-06
+
+           Step           Time
+             81       81.00000
+
+           Step           Time
+             82       82.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    3.81456e+00    2.37834e+01    7.95934e+01    2.14251e+01    2.96095e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.92619e+02   -5.44070e+01    5.51843e+01   -8.60264e+02   -6.17458e+01
+   Constr. rmsd
+    1.47471e-06
+
+           Step           Time
+             83       83.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    3.82238e+00    2.38448e+01    7.95324e+01    2.13862e+01    2.88148e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.93341e+02   -5.44070e+01    5.51846e+01   -8.61096e+02   -6.17266e+01
+   Constr. rmsd
+    1.48353e-06
+
+           Step           Time
+             84       84.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    3.71527e+00    2.40200e+01    7.96540e+01    2.12896e+01    2.78929e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.94088e+02   -5.44070e+01    5.51848e+01   -8.61842e+02   -6.15835e+01
+   Constr. rmsd
+    1.81233e-06
+
+           Step           Time
+             85       85.00000
+
+           Step           Time
+             86       86.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    3.80606e+00    2.39834e+01    7.95032e+01    2.13231e+01    2.74135e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.94613e+02   -5.44070e+01    5.51850e+01   -8.62477e+02   -6.16471e+01
+   Constr. rmsd
+    1.38137e-06
+
+           Step           Time
+             87       87.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    3.66713e+00    2.41616e+01    7.96758e+01    2.12120e+01    2.67893e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.95092e+02   -5.44070e+01    5.51852e+01   -8.62918e+02   -6.14893e+01
+   Constr. rmsd
+    1.68644e-06
+
+           Step           Time
+             88       88.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    3.81472e+00    2.40931e+01    7.95780e+01    2.14308e+01    2.62497e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.95655e+02   -5.44070e+01    5.51853e+01   -8.63335e+02   -6.15878e+01
+   Constr. rmsd
+    2.02781e-06
+
+           Step           Time
+             89       89.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    3.60617e+00    2.43313e+01    7.99063e+01    2.13394e+01    2.56869e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.96010e+02   -5.44070e+01    5.51856e+01   -8.63480e+02   -6.13613e+01
+   Constr. rmsd
+    2.31585e-06
+
+           Step           Time
+             90       90.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    3.83676e+00    2.41932e+01    7.97678e+01    2.16933e+01    2.51888e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.96570e+02   -5.44070e+01    5.51857e+01   -8.63782e+02   -6.15312e+01
+   Constr. rmsd
+    2.80258e-06
+
+           Step           Time
+             91       91.00000
+
+           Step           Time
+             92       92.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    3.65136e+00    2.43271e+01    7.93618e+01    2.08235e+01    2.49161e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.97101e+02   -5.44070e+01    5.51857e+01   -8.65667e+02   -6.14029e+01
+   Constr. rmsd
+    1.48874e-06
+
+           Step           Time
+             93       93.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    3.68601e+00    2.43633e+01    7.93082e+01    2.08472e+01    2.42318e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.97821e+02   -5.44070e+01    5.51860e+01   -8.66414e+02   -6.14106e+01
+   Constr. rmsd
+    1.53984e-06
+
+           Step           Time
+             94       94.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    3.54320e+00    2.45795e+01    7.96580e+01    2.09227e+01    2.34340e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.98453e+02   -5.44070e+01    5.51862e+01   -8.66627e+02   -6.12105e+01
+   Constr. rmsd
+    2.26543e-06
+
+           Step           Time
+             95       95.00000
+
+           Step           Time
+             96       96.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    3.63906e+00    2.44981e+01    7.92353e+01    2.06560e+01    2.31594e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.98991e+02   -5.44070e+01    5.51864e+01   -8.67867e+02   -6.13173e+01
+   Constr. rmsd
+    1.29120e-06
+
+           Step           Time
+             97       97.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    3.55754e+00    2.46199e+01    7.92942e+01    2.05429e+01    2.26132e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -9.99550e+02   -5.44070e+01    5.51864e+01   -8.68495e+02   -6.12172e+01
+   Constr. rmsd
+    1.42974e-06
+
+           Step           Time
+             98       98.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    3.66547e+00    2.46009e+01    7.93123e+01    2.07997e+01    2.19787e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -1.00023e+03   -5.44070e+01    5.51867e+01   -8.68873e+02   -6.12727e+01
+   Constr. rmsd
+    1.93452e-06
+
+           Step           Time
+             99       99.00000
+
+           Step           Time
+            100      100.00000
+
+   Energies (kJ/mol)
+           Bond  Harmonic Pot.       G96Angle    Proper Dih.  Improper Dih.
+    3.53928e+00    2.47174e+01    7.92078e+01    2.03992e+01    2.16957e+00
+        LJ (SR)   Coulomb (SR)   Coul. recip.      Potential Pressure (bar)
+   -1.00062e+03   -5.44070e+01    5.51866e+01   -8.69810e+02   -6.11574e+01
+   Constr. rmsd
+    1.26447e-06
+
+
+Energy minimization reached the maximum number of steps before the forces
+reached the requested precision Fmax < 10.
+
+Steepest Descents did not converge to Fmax < 10 in 101 steps.
+Potential Energy  = -8.6981036e+02
+Maximum force     =  5.9102543e+01 on atom 2
+Norm of force     =  1.9498026e+01
+Finished mdrun on rank 0 Thu Apr  9 17:17:23 2020

@@ -1,0 +1,92 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fswiss\fcharset0 ArialMT;\f1\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red230\green230\blue230;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww18720\viewh13120\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\b\fs24 \cf0 COMMANDS
+\f1\b0 \
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 \cb2 \CocoaLigature0 gmx editconf -f TM1.pdb -o TM1_parallel.pdb -princ -rotate 0 0 90\cb1 \
+\CocoaLigature1 \
+\cb2 \CocoaLigature0 gmx editconf -f TM1_parallel.pdb -o TM1_1.gro -center 2 4 4\cb1  \
+\CocoaLigature1 \
+\cb2 \CocoaLigature0 gmx editconf -f TM1_parallel.pdb -o TM1_2.gro -center 6 4 4\cb1  \
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+\cf0 \CocoaLigature1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 \cb2 \CocoaLigature0 cat TM1_1.gro TM1_2.gro > TM1TM1.gro\cb1 \
+\
+\pard\pardeftab720\ri-340\partightenfactor0
+
+\f0 \cf0 \CocoaLigature1 Opened TM1TM1.gro\
+Removed the section between the two proteins and doubled the number of atoms at the top
+\f1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 \CocoaLigature0 \
+\cb2 gmx editconf -f TM1TM1.gro -o TM1TM1_rotated_1.gro -rotate 0 0 90\cb1 \
+\
+\cb2 gmx editconf -f TM1TM1_rotated_1.gro -o TM1TM1_rotated_2.gro -rotate 0 90 0\cb1 \
+\
+\cb2 python2.7 martinize.py -f TM1TM1_rotated_2.gro -o TM1TM1.top -x TM1TM1_CG.pdb -dssp /Applications/xssp-3.0.10/mkdssp -p backbone -ff martini22 -elastic -ef 500 -el 0.5 -eu 0.9 -ea 0 -ep 0\cb1 \
+\
+\cb2 gmx grompp -f minim-vacuum.mdp -c TM1TM1_CG.pdb -p TM1TM1.top -o minim-vacuum.tpr\cb1 \
+\
+\cb2 gmx mdrun -deffnm minim-vacuum -v\cb1 \
+\
+\cb2 python2.7 insane.py -f TM1TM1_CG.pdb -o TM1TM1_CG_system.gro -p TM1TM1_system.top -pbc square -box 8,8,8 -l DPPC -u DPPC -center -sol W\cb1 \
+\
+
+\f0 - In this example, there are no ions to be added as the total charge is 0.\
+
+\f1 \
+
+\f0\fs18 edit TM1TM1_system.top =\
+#include "martini.itp"\
+#include "Protein_A.itp"\
+#include "martini_v2.0_DPPC_01.itp"\
+#include "martini_v2.0_ions.itp"\
+\
+[ system ]\
+; name\
+Protein in INSANE! Membrane UpperLeaflet>DPPC=1 LowerLeaflet>DPPC=1\
+\
+[ molecules ]\
+; name  number\
+Protein_A        1\
+Protein_A        1\
+DPPC            71\
+DPPC            63\
+W             2141
+\f1\fs24 \
+\
+\cb2 gmx grompp -f ions.mdp -c TM1TM1_CG_system.gro -p TM1TM1_system.top -o TM1TM1_CG_system_ions.tpr\cb1  \
+\
+\cb2 gmx genion -s TM1TM1_CG_system_ions.tpr -o TM1TM1_CG_system_ions.gro -p TM1TM1_system.top -pname NA -nname CL -neutral yes\cb1 \
+\
+
+\f0 No ions to add.
+\f1 \
+\
+\cb2 gmx grompp -f minim.mdp -c TM1TM1_CG_system_ions.gro -p TM1TM1_system.top -o TM1TM1_em.tpr\cb1 \
+\
+\cb2 gmx mdrun -v -deffnm TM1TM1_em\cb1 \
+\
+\pard\pardeftab720\ri-340\partightenfactor0
+\cf0 \cb2 \CocoaLigature1 gmx make_ndx -f TM1TM1_CG_system_ions.gro -o index.ndx\cb1 \
+\
+
+\f0 Protein and DPPC
+\f1 \CocoaLigature0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf0 \
+\cb2 gmx grompp -f nvt.mdp -c TM1TM1_em.gro -r TM1TM1_em.gro -p TM1TM1_system.top -n index.ndx -o TM1TM1_nvt.tpr\cb1 \
+\
+\cb2 gmx mdrun -v -deffnm TM1TM1_nvt\cb1 \
+\
+\cb2 gmx grompp -f npt.mdp -c TM1TM1_nvt.gro -r TM1TM1_nvt.gro -t TM1TM1_nvt.cpt -p TM1TM1_system.top -n index.ndx -o TM1TM1_npt.tpr\cb1 \
+\
+\cb2 gmx mdrun -deffnm TM1TM1_npt\cb1 \
+\
+\cb2 gmx grompp -f md.mdp -c TM1TM1_npt.gro -t TM1TM1_npt.cpt -p TM1TM1_system.top -n index.ndx -o TM1TM1_md.tpr}

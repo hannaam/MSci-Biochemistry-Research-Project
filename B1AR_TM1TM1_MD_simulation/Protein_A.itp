@@ -1,0 +1,323 @@
+; MARTINI (martini22) Coarse Grained topology file for "Protein_A"
+; Created by py version 2.6 
+; Using the following options:  -f TM1TM1_rotated_2.gro -o TM1TM1.top -x TM1TM1_CG.pdb -dssp /Applications/xssp-3.0.10/mkdssp -p backbone -ff martini22 -elastic -ef 500 -el 0.5 -eu 0.9 -ea 0 -ep 0
+; Sequence:
+; QWTAGMGLLMALVVLLIVAGNVLVIAAIA
+; Secondary Structure:
+; C1111HHHHHHHHHHHHHHHHHHH2222C
+
+[ moleculetype ]
+; Name         Exclusions
+Protein_A         1
+
+[ atoms ]
+    1    Qd     1   GLN    BB     1  1.0000 ; C
+    2    P4     1   GLN   SC1     2  0.0000 ; C
+    3    Nd     2   TRP    BB     3  0.0000 ; 1
+    4   SC4     2   TRP   SC1     4  0.0000 ; 1
+    5   SNd     2   TRP   SC2     5  0.0000 ; 1
+    6   SC5     2   TRP   SC3     6  0.0000 ; 1
+    7   SC5     2   TRP   SC4     7  0.0000 ; 1
+    8    Nd     3   THR    BB     8  0.0000 ; 1
+    9    P1     3   THR   SC1     9  0.0000 ; 1
+   10    N0     4   ALA    BB    10  0.0000 ; 1
+   11    Nd     5   GLY    BB    11  0.0000 ; 1
+   12    N0     6   MET    BB    12  0.0000 ; H
+   13    C5     6   MET   SC1    13  0.0000 ; H
+   14    N0     7   GLY    BB    14  0.0000 ; H
+   15    N0     8   LEU    BB    15  0.0000 ; H
+   16   AC1     8   LEU   SC1    16  0.0000 ; H
+   17    N0     9   LEU    BB    17  0.0000 ; H
+   18   AC1     9   LEU   SC1    18  0.0000 ; H
+   19    N0    10   MET    BB    19  0.0000 ; H
+   20    C5    10   MET   SC1    20  0.0000 ; H
+   21    C5    11   ALA    BB    21  0.0000 ; H
+   22    N0    12   LEU    BB    22  0.0000 ; H
+   23   AC1    12   LEU   SC1    23  0.0000 ; H
+   24    N0    13   VAL    BB    24  0.0000 ; H
+   25   AC2    13   VAL   SC1    25  0.0000 ; H
+   26    N0    14   VAL    BB    26  0.0000 ; H
+   27   AC2    14   VAL   SC1    27  0.0000 ; H
+   28    N0    15   LEU    BB    28  0.0000 ; H
+   29   AC1    15   LEU   SC1    29  0.0000 ; H
+   30    N0    16   LEU    BB    30  0.0000 ; H
+   31   AC1    16   LEU   SC1    31  0.0000 ; H
+   32    N0    17   ILE    BB    32  0.0000 ; H
+   33   AC1    17   ILE   SC1    33  0.0000 ; H
+   34    N0    18   VAL    BB    34  0.0000 ; H
+   35   AC2    18   VAL   SC1    35  0.0000 ; H
+   36    C5    19   ALA    BB    36  0.0000 ; H
+   37    N0    20   GLY    BB    37  0.0000 ; H
+   38    N0    21   ASN    BB    38  0.0000 ; H
+   39    P5    21   ASN   SC1    39  0.0000 ; H
+   40    N0    22   VAL    BB    40  0.0000 ; H
+   41   AC2    22   VAL   SC1    41  0.0000 ; H
+   42    N0    23   LEU    BB    42  0.0000 ; H
+   43   AC1    23   LEU   SC1    43  0.0000 ; H
+   44    N0    24   VAL    BB    44  0.0000 ; H
+   45   AC2    24   VAL   SC1    45  0.0000 ; H
+   46    Na    25   ILE    BB    46  0.0000 ; 2
+   47   AC1    25   ILE   SC1    47  0.0000 ; 2
+   48    N0    26   ALA    BB    48  0.0000 ; 2
+   49    N0    27   ALA    BB    49  0.0000 ; 2
+   50    Na    28   ILE    BB    50  0.0000 ; 2
+   51   AC1    28   ILE   SC1    51  0.0000 ; 2
+   52    Qa    29   ALA    BB    52 -1.0000 ; C
+
+[ bonds ]
+#ifndef NO_RUBBER_BANDS
+#ifndef RUBBER_FC
+#define RUBBER_FC 500.000000
+#endif
+    1    10      6   0.46030 RUBBER_FC*1.000000
+    1    11      6   0.55635 RUBBER_FC*1.000000
+    1    12      6   0.78519 RUBBER_FC*1.000000
+    3    11      6   0.46147 RUBBER_FC*1.000000
+    3    12      6   0.57661 RUBBER_FC*1.000000
+    3    14      6   0.78474 RUBBER_FC*1.000000
+    8    12      6   0.51029 RUBBER_FC*1.000000
+    8    14      6   0.60259 RUBBER_FC*1.000000
+    8    15      6   0.84031 RUBBER_FC*1.000000
+   10    14      6   0.51864 RUBBER_FC*1.000000
+   10    15      6   0.65126 RUBBER_FC*1.000000
+   10    17      6   0.85684 RUBBER_FC*1.000000
+   11    15      6   0.53495 RUBBER_FC*1.000000
+   11    17      6   0.64325 RUBBER_FC*1.000000
+   11    19      6   0.85141 RUBBER_FC*1.000000
+   12    17      6   0.48901 RUBBER_FC*1.000000
+   12    19      6   0.60461 RUBBER_FC*1.000000
+   12    21      6   0.81092 RUBBER_FC*1.000000
+   14    19      6   0.49220 RUBBER_FC*1.000000
+   14    21      6   0.59678 RUBBER_FC*1.000000
+   14    22      6   0.83983 RUBBER_FC*1.000000
+   15    21      6   0.47470 RUBBER_FC*1.000000
+   15    22      6   0.63733 RUBBER_FC*1.000000
+   15    24      6   0.83993 RUBBER_FC*1.000000
+   17    22      6   0.49746 RUBBER_FC*1.000000
+   17    24      6   0.63061 RUBBER_FC*1.000000
+   17    26      6   0.83883 RUBBER_FC*1.000000
+   19    24      6   0.48877 RUBBER_FC*1.000000
+   19    26      6   0.61858 RUBBER_FC*1.000000
+   19    28      6   0.82041 RUBBER_FC*1.000000
+   21    26      6   0.53015 RUBBER_FC*1.000000
+   21    28      6   0.64147 RUBBER_FC*1.000000
+   21    30      6   0.86536 RUBBER_FC*1.000000
+   22    28      6   0.48085 RUBBER_FC*1.000000
+   22    30      6   0.60366 RUBBER_FC*1.000000
+   22    32      6   0.80662 RUBBER_FC*1.000000
+   24    30      6   0.49398 RUBBER_FC*1.000000
+   24    32      6   0.60517 RUBBER_FC*1.000000
+   24    34      6   0.80255 RUBBER_FC*1.000000
+   26    32      6   0.49125 RUBBER_FC*1.000000
+   26    34      6   0.58361 RUBBER_FC*1.000000
+   26    36      6   0.77157 RUBBER_FC*1.000000
+   28    34      6   0.48460 RUBBER_FC*1.000000
+   28    36      6   0.54409 RUBBER_FC*1.000000
+   28    37      6   0.76995 RUBBER_FC*1.000000
+   30    36      6   0.48532 RUBBER_FC*1.000000
+   30    37      6   0.57218 RUBBER_FC*1.000000
+   30    38      6   0.79335 RUBBER_FC*1.000000
+   32    37      6   0.50560 RUBBER_FC*1.000000
+   32    38      6   0.60679 RUBBER_FC*1.000000
+   32    40      6   0.80536 RUBBER_FC*1.000000
+   34    38      6   0.50471 RUBBER_FC*1.000000
+   34    40      6   0.60211 RUBBER_FC*1.000000
+   34    42      6   0.81480 RUBBER_FC*1.000000
+   36    40      6   0.51969 RUBBER_FC*1.000000
+   36    42      6   0.62505 RUBBER_FC*1.000000
+   36    44      6   0.86236 RUBBER_FC*1.000000
+   37    42      6   0.47867 RUBBER_FC*1.000000
+   37    44      6   0.62698 RUBBER_FC*1.000000
+   37    46      6   0.83426 RUBBER_FC*1.000000
+   38    44      6   0.49815 RUBBER_FC*1.000000
+   38    46      6   0.62025 RUBBER_FC*1.000000
+   38    48      6   0.79895 RUBBER_FC*1.000000
+   40    46      6   0.49118 RUBBER_FC*1.000000
+   40    48      6   0.57825 RUBBER_FC*1.000000
+   40    49      6   0.80543 RUBBER_FC*1.000000
+   42    48      6   0.45661 RUBBER_FC*1.000000
+   42    49      6   0.57993 RUBBER_FC*1.000000
+   42    50      6   0.81973 RUBBER_FC*1.000000
+   44    49      6   0.46693 RUBBER_FC*1.000000
+   44    50      6   0.61869 RUBBER_FC*1.000000
+   44    52      6   0.80334 RUBBER_FC*1.000000
+   46    50      6   0.49903 RUBBER_FC*1.000000
+   46    52      6   0.57366 RUBBER_FC*1.000000
+   48    52      6   0.48273 RUBBER_FC*1.000000
+#endif
+; Sidechain bonds
+    1     2      1   0.40000  5000 ; GLN
+    3     4      1   0.30000  5000 ; TRP
+   12    13      1   0.40000  2500 ; MET
+   15    16      1   0.33000  7500 ; LEU
+   17    18      1   0.33000  7500 ; LEU
+   19    20      1   0.40000  2500 ; MET
+   22    23      1   0.33000  7500 ; LEU
+   28    29      1   0.33000  7500 ; LEU
+   30    31      1   0.33000  7500 ; LEU
+   38    39      1   0.32000  5000 ; ASN
+   42    43      1   0.33000  7500 ; LEU
+
+[ constraints ]
+    1     3      1   0.33000 ; GLN(C)-TRP(1)
+    3     8      1   0.31000 ; TRP(1)-THR(1)
+    8    10      1   0.31000 ; THR(1)-ALA(1)
+   10    11      1   0.31000 ; ALA(1)-GLY(1)
+   11    12      1   0.31000 ; GLY(1)-MET(H)
+   12    14      1   0.31000 ; MET(H)-GLY(H)
+   14    15      1   0.31000 ; GLY(H)-LEU(H)
+   15    17      1   0.31000 ; LEU(H)-LEU(H)
+   17    19      1   0.31000 ; LEU(H)-MET(H)
+   19    21      1   0.31000 ; MET(H)-ALA(H)
+   21    22      1   0.31000 ; ALA(H)-LEU(H)
+   22    24      1   0.31000 ; LEU(H)-VAL(H)
+   24    26      1   0.31000 ; VAL(H)-VAL(H)
+   26    28      1   0.31000 ; VAL(H)-LEU(H)
+   28    30      1   0.31000 ; LEU(H)-LEU(H)
+   30    32      1   0.31000 ; LEU(H)-ILE(H)
+   32    34      1   0.31000 ; ILE(H)-VAL(H)
+   34    36      1   0.31000 ; VAL(H)-ALA(H)
+   36    37      1   0.31000 ; ALA(H)-GLY(H)
+   37    38      1   0.31000 ; GLY(H)-ASN(H)
+   38    40      1   0.31000 ; ASN(H)-VAL(H)
+   40    42      1   0.31000 ; VAL(H)-LEU(H)
+   42    44      1   0.31000 ; LEU(H)-VAL(H)
+   44    46      1   0.31000 ; VAL(H)-ILE(2)
+   46    48      1   0.31000 ; ILE(2)-ALA(2)
+   48    49      1   0.31000 ; ALA(2)-ALA(2)
+   49    50      1   0.31000 ; ALA(2)-ILE(2)
+   50    52      1   0.33000 ; ILE(2)-ALA(C)
+    4     5      1   0.27000 ; TRP
+    4     6      1   0.27000 ; TRP
+    5     6      1   0.27000 ; TRP
+    5     7      1   0.27000 ; TRP
+    6     7      1   0.27000 ; TRP
+    8     9      1   0.26000 ; THR
+   24    25      1   0.26500 ; VAL
+   26    27      1   0.26500 ; VAL
+   32    33      1   0.31000 ; ILE
+   34    35      1   0.26500 ; VAL
+   40    41      1   0.26500 ; VAL
+   44    45      1   0.26500 ; VAL
+   46    47      1   0.31000 ; ILE
+   50    51      1   0.31000 ; ILE
+
+[ angles ]
+; Backbone angles
+    1     3     8      2    127    20 ; GLN(C)-TRP(1)-THR(1)
+    3     8    10      2     96   700 ; TRP(1)-THR(1)-ALA(1)
+    8    10    11      2     96   700 ; THR(1)-ALA(1)-GLY(1)
+   10    11    12      2     96   700 ; ALA(1)-GLY(1)-MET(H)
+   11    12    14      2     96   700 ; GLY(1)-MET(H)-GLY(H)
+   12    14    15      2     96   700 ; MET(H)-GLY(H)-LEU(H)
+   14    15    17      2     96   700 ; GLY(H)-LEU(H)-LEU(H)
+   15    17    19      2     96   700 ; LEU(H)-LEU(H)-MET(H)
+   17    19    21      2     96   700 ; LEU(H)-MET(H)-ALA(H)
+   19    21    22      2     96   700 ; MET(H)-ALA(H)-LEU(H)
+   21    22    24      2     96   700 ; ALA(H)-LEU(H)-VAL(H)
+   22    24    26      2     96   700 ; LEU(H)-VAL(H)-VAL(H)
+   24    26    28      2     96   700 ; VAL(H)-VAL(H)-LEU(H)
+   26    28    30      2     96   700 ; VAL(H)-LEU(H)-LEU(H)
+   28    30    32      2     96   700 ; LEU(H)-LEU(H)-ILE(H)
+   30    32    34      2     96   700 ; LEU(H)-ILE(H)-VAL(H)
+   32    34    36      2     96   700 ; ILE(H)-VAL(H)-ALA(H)
+   34    36    37      2     96   700 ; VAL(H)-ALA(H)-GLY(H)
+   36    37    38      2     96   700 ; ALA(H)-GLY(H)-ASN(H)
+   37    38    40      2     96   700 ; GLY(H)-ASN(H)-VAL(H)
+   38    40    42      2     96   700 ; ASN(H)-VAL(H)-LEU(H)
+   40    42    44      2     96   700 ; VAL(H)-LEU(H)-VAL(H)
+   42    44    46      2     96   700 ; LEU(H)-VAL(H)-ILE(2)
+   44    46    48      2     96   700 ; VAL(H)-ILE(2)-ALA(2)
+   46    48    49      2     96   700 ; ILE(2)-ALA(2)-ALA(2)
+   48    49    50      2     96   700 ; ALA(2)-ALA(2)-ILE(2)
+   49    50    52      2    127    20 ; ALA(2)-ILE(2)-ALA(C)
+; Backbone-sidechain angles
+    2     1     3      2    100    25 ; GLN(C)-TRP(1) SBB
+    1     3     4      2    100    25 ; GLN(C)-TRP(1) SBB
+    3     8     9      2    100    25 ; TRP(1)-THR(1) SBB
+   11    12    13      2    100    25 ; GLY(1)-MET(H) SBB
+   14    15    16      2    100    25 ; GLY(H)-LEU(H) SBB
+   15    17    18      2    100    25 ; LEU(H)-LEU(H) SBB
+   17    19    20      2    100    25 ; LEU(H)-MET(H) SBB
+   21    22    23      2    100    25 ; ALA(H)-LEU(H) SBB
+   22    24    25      2    100    25 ; LEU(H)-VAL(H) SBB
+   24    26    27      2    100    25 ; VAL(H)-VAL(H) SBB
+   26    28    29      2    100    25 ; VAL(H)-LEU(H) SBB
+   28    30    31      2    100    25 ; LEU(H)-LEU(H) SBB
+   30    32    33      2    100    25 ; LEU(H)-ILE(H) SBB
+   32    34    35      2    100    25 ; ILE(H)-VAL(H) SBB
+   37    38    39      2    100    25 ; GLY(H)-ASN(H) SBB
+   38    40    41      2    100    25 ; ASN(H)-VAL(H) SBB
+   40    42    43      2    100    25 ; VAL(H)-LEU(H) SBB
+   42    44    45      2    100    25 ; LEU(H)-VAL(H) SBB
+   44    46    47      2    100    25 ; VAL(H)-ILE(2) SBB
+   49    50    51      2    100    25 ; ALA(2)-ILE(2) SBB
+; Sidechain angles
+    3     4     5      2    210    50 ; TRP
+    3     4     6      2     90    50 ; TRP
+
+[ dihedrals ]
+; Backbone dihedrals
+    3     8    10    11      1   -120   400     1 ; TRP(1)-THR(1)-ALA(1)-GLY(1)
+    8    10    11    12      1   -120   400     1 ; THR(1)-ALA(1)-GLY(1)-MET(H)
+   10    11    12    14      1   -120   400     1 ; ALA(1)-GLY(1)-MET(H)-GLY(H)
+   11    12    14    15      1   -120   400     1 ; GLY(1)-MET(H)-GLY(H)-LEU(H)
+   12    14    15    17      1   -120   400     1 ; MET(H)-GLY(H)-LEU(H)-LEU(H)
+   14    15    17    19      1   -120   400     1 ; GLY(H)-LEU(H)-LEU(H)-MET(H)
+   15    17    19    21      1   -120   400     1 ; LEU(H)-LEU(H)-MET(H)-ALA(H)
+   17    19    21    22      1   -120   400     1 ; LEU(H)-MET(H)-ALA(H)-LEU(H)
+   19    21    22    24      1   -120   400     1 ; MET(H)-ALA(H)-LEU(H)-VAL(H)
+   21    22    24    26      1   -120   400     1 ; ALA(H)-LEU(H)-VAL(H)-VAL(H)
+   22    24    26    28      1   -120   400     1 ; LEU(H)-VAL(H)-VAL(H)-LEU(H)
+   24    26    28    30      1   -120   400     1 ; VAL(H)-VAL(H)-LEU(H)-LEU(H)
+   26    28    30    32      1   -120   400     1 ; VAL(H)-LEU(H)-LEU(H)-ILE(H)
+   28    30    32    34      1   -120   400     1 ; LEU(H)-LEU(H)-ILE(H)-VAL(H)
+   30    32    34    36      1   -120   400     1 ; LEU(H)-ILE(H)-VAL(H)-ALA(H)
+   32    34    36    37      1   -120   400     1 ; ILE(H)-VAL(H)-ALA(H)-GLY(H)
+   34    36    37    38      1   -120   400     1 ; VAL(H)-ALA(H)-GLY(H)-ASN(H)
+   36    37    38    40      1   -120   400     1 ; ALA(H)-GLY(H)-ASN(H)-VAL(H)
+   37    38    40    42      1   -120   400     1 ; GLY(H)-ASN(H)-VAL(H)-LEU(H)
+   38    40    42    44      1   -120   400     1 ; ASN(H)-VAL(H)-LEU(H)-VAL(H)
+   40    42    44    46      1   -120   400     1 ; VAL(H)-LEU(H)-VAL(H)-ILE(2)
+   42    44    46    48      1   -120   400     1 ; LEU(H)-VAL(H)-ILE(2)-ALA(2)
+   44    46    48    49      1   -120   400     1 ; VAL(H)-ILE(2)-ALA(2)-ALA(2)
+   46    48    49    50      1   -120   400     1 ; ILE(2)-ALA(2)-ALA(2)-ILE(2)
+; Sidechain improper dihedrals
+    3     5     6     4      2      0    50 ; TRP
+    4     5     7     6      2      0   200 ; TRP
+
+#ifdef POSRES
+#ifndef POSRES_FC
+#define POSRES_FC 1000.00
+#endif
+ [ position_restraints ]
+      1    1    POSRES_FC    POSRES_FC    POSRES_FC
+      3    1    POSRES_FC    POSRES_FC    POSRES_FC
+      8    1    POSRES_FC    POSRES_FC    POSRES_FC
+     10    1    POSRES_FC    POSRES_FC    POSRES_FC
+     11    1    POSRES_FC    POSRES_FC    POSRES_FC
+     12    1    POSRES_FC    POSRES_FC    POSRES_FC
+     14    1    POSRES_FC    POSRES_FC    POSRES_FC
+     15    1    POSRES_FC    POSRES_FC    POSRES_FC
+     17    1    POSRES_FC    POSRES_FC    POSRES_FC
+     19    1    POSRES_FC    POSRES_FC    POSRES_FC
+     21    1    POSRES_FC    POSRES_FC    POSRES_FC
+     22    1    POSRES_FC    POSRES_FC    POSRES_FC
+     24    1    POSRES_FC    POSRES_FC    POSRES_FC
+     26    1    POSRES_FC    POSRES_FC    POSRES_FC
+     28    1    POSRES_FC    POSRES_FC    POSRES_FC
+     30    1    POSRES_FC    POSRES_FC    POSRES_FC
+     32    1    POSRES_FC    POSRES_FC    POSRES_FC
+     34    1    POSRES_FC    POSRES_FC    POSRES_FC
+     36    1    POSRES_FC    POSRES_FC    POSRES_FC
+     37    1    POSRES_FC    POSRES_FC    POSRES_FC
+     38    1    POSRES_FC    POSRES_FC    POSRES_FC
+     40    1    POSRES_FC    POSRES_FC    POSRES_FC
+     42    1    POSRES_FC    POSRES_FC    POSRES_FC
+     44    1    POSRES_FC    POSRES_FC    POSRES_FC
+     46    1    POSRES_FC    POSRES_FC    POSRES_FC
+     48    1    POSRES_FC    POSRES_FC    POSRES_FC
+     49    1    POSRES_FC    POSRES_FC    POSRES_FC
+     50    1    POSRES_FC    POSRES_FC    POSRES_FC
+     52    1    POSRES_FC    POSRES_FC    POSRES_FC
+#endif

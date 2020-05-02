@@ -1,0 +1,14 @@
+#include "martini.itp"
+
+#define RUBBER_BANDS
+
+#include "Protein_A.itp"
+
+[ system ]
+; name
+Martini system from TM1TM1_rotated_2.gro
+
+[ molecules ]
+; name        number
+Protein_A 	 1
+Protein_A 	 1
