@@ -1,96 +1,78 @@
-{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
-{\colortbl;\red255\green255\blue255;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11860\viewh9100\viewkind0
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+COMMANDS
 
-\f0\fs24 \cf0 COMMANDS\
-\
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+gmx editconf -f 4bvn_edited_TM1.pdb -o TM1_parallel.pdb -princ -rotate 0 0 90
+gmx editconf -f TM1_parallel.pdb -o TM1_1.gro -center 2 4 4 
+gmx editconf -f TM1_parallel.pdb -o TM1_2.gro -center 6 4 4 
 
-\f1 \CocoaLigature0 gmx editconf -f 4bvn_edited_TM1.pdb -o TM1_parallel.pdb -princ -rotate 0 0 90
-\f0 \CocoaLigature1 \
+cat TM1_1.gro TM1_2.gro > TM1_aligned.gro
 
-\f1 \CocoaLigature0 gmx editconf -f TM1_parallel.pdb -o TM1_1.gro -center 2 4 4 
-\f0 \CocoaLigature1 \
+Opened TM1_aligned.gro
+Removed the section between the two proteins and doubled the number of atoms at the top
 
-\f1 \CocoaLigature0 gmx editconf -f TM1_parallel.pdb -o TM1_2.gro -center 6 4 4 \
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+gmx editconf -f TM1_aligned.gro -o TM1_aligned_rotated_1.gro -rotate 0 0 90
+gmx editconf -f TM1_aligned_rotated_1.gro -o TM1_aligned_rotated_2.gro -rotate 0 90 0
 
-\f0 \CocoaLigature1 \
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+martini and the elastic network:
+python2.7 martinize.py -f TM1TM1_rotated_2.gro -o TM1TM1.top -x TM1TM1_CG.pdb -dssp /Applications/xssp-3.0.10/mkdssp -p backbone -ff martini22 -elastic -ef 500 -el 0.5 -eu 0.9 -ea 0 -ep 0
 
-\f1 \CocoaLigature0 cat TM1_1.gro TM1_2.gro > TM1_aligned.gro\
-\
-\pard\pardeftab720\ri-340\partightenfactor0
+OR
 
-\f0 \CocoaLigature1 Opened TM1_aligned.gro\
-Removed the section between the two proteins and doubled the number of atoms at the top\
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+no constraints:
+python2.7 martinize.py -f TM1_aligned.gro -o TM1.top -x TM1_CG.pdb -dssp /Applications/xssp-3.0.10/mkdssp -p backbone -ff martini22
 
-\f1 \CocoaLigature0 \
-gmx editconf -f TM1_aligned.gro -o TM1_aligned_rotated_1.gro -rotate 0 0 90\
-gmx editconf -f TM1_aligned_rotated_1.gro -o TM1_aligned_rotated_2.gro -rotate 0 90 0\
-\
-python2.7 martinize.py -f TM1_aligned.gro -o TM1.top -x TM1_CG.pdb -dssp /Applications/xssp-3.0.10/mkdssp -p backbone -ff martini22 -elastic -ef 500 -el 0.5 -eu 0.9 -ea 0 -ep 0\
-\
-gmx grompp -f minim-vacuum.mdp -c TM1_CG.pdb -p TM1.top -o minim-vacuum.tpr\
-gmx mdrun -deffnm minim-vacuum -v\
-\
-python2.7 insane.py -f TM1_CG.pdb -o TM1_CG_system.gro -p system.top -pbc square -box 8,8,8 -l DPPC -u DPPC -center -sol W\
-\
-edit system.top =\
-#include "martini.itp"\
-#include "Protein_A.itp"\
-#include "martini_v2.0_DPPC_01.itp"\
-#include "martini_v2.0_ions.itp"\
-\
-[ system ]\
-; name\
-Protein in INSANE! Membrane UpperLeaflet>DPPC=1 LowerLeaflet>DPPC=1\
-\
-[ molecules ]\
-; name  number\
-Protein_A        1\
-Protein_A        1\
-DPPC            71\
-DPPC            63\
-W             2141\
-\
-gmx grompp -f ions.mdp -c TM1_CG_system.gro -p system.top -o TM1_CG_system_ions.tpr \
-gmx genion -s TM1_CG_system_ions.tpr -o TM1_CG_system_ions.gro -p system.top -pname NA -nname CL -neutral yes\
-\
-gmx grompp -f minim.mdp -c TM1_CG_system_ions.gro -p system.top -o TM1_em.tpr\
-gmx mdrun -v -deffnm TM1_em\
-\
-Steepest Descents converged to machine precision in 28770 steps,\
-but did not reach the requested Fmax < 10.\
-Potential Energy  = -1.0829706e+05\
-Maximum force     =  1.5905204e+01 on atom 79\
-Norm of force     =  1.0778955e+00\
-\
-\pard\pardeftab720\ri-340\partightenfactor0
+gmx grompp -f minim-vacuum.mdp -c TM1_CG.pdb -p TM1.top -o minim-vacuum.tpr
+gmx mdrun -deffnm minim-vacuum -v
 
-\f0 \CocoaLigature1 gmx make_ndx -f TM1_CG_system_ions.gro -o index.ndx
-\f1 \CocoaLigature0 \
-\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
-\
-gmx grompp -f nvt.mdp -c TM1_em.gro -r TM1_em.gro -p system.top -n index.ndx -o TM1_nvt.tpr\
-gmx mdrun -v -deffnm TM1_nvt\
-\
-\
-               Core t (s)   Wall t (s)        (%)\
-       Time:     4819.203     1204.801      400.0\
-                 (ns/day)    (hour/ns)\
-Performance:        7.171        3.347\
-\
-gmx grompp -f npt.mdp -c TM1_nvt.gro -r TM1_nvt.gro -t TM1_nvt.cpt -p system.top -n index.ndx -o TM1_npt.tpr\
-gmx mdrun -deffnm TM1_npt\
-\
-               Core t (s)   Wall t (s)        (%)\
-       Time:     5139.730     1284.932      400.0\
-                 (ns/day)    (hour/ns)\
-Performance:       67.242        0.357\
-\
-\
-gmx grompp -f md.mdp -c TM1_npt.gro -t TM1_npt.cpt -p system.top -n index.ndx -o TM1_md.tpr}
+python2.7 insane.py -f TM1_CG.pdb -o TM1_CG_system.gro -p system.top -pbc square -box 8,8,8 -l DPPC -u DPPC -center -sol W
+
+edit system.top =
+#include "martini.itp"
+#include "Protein_A.itp"
+#include "martini_v2.0_DPPC_01.itp"
+#include "martini_v2.0_ions.itp"
+
+[ system ]
+; name
+Protein in INSANE! Membrane UpperLeaflet>DPPC=1 LowerLeaflet>DPPC=1
+
+[ molecules ]
+; name  number
+Protein_A        1
+Protein_A        1
+DPPC            71
+DPPC            63
+W             2141
+
+gmx grompp -f ions.mdp -c TM1_CG_system.gro -p system.top -o TM1_CG_system_ions.tpr 
+gmx genion -s TM1_CG_system_ions.tpr -o TM1_CG_system_ions.gro -p system.top -pname NA -nname CL -neutral yes
+
+gmx grompp -f minim.mdp -c TM1_CG_system_ions.gro -p system.top -o TM1_em.tpr
+gmx mdrun -v -deffnm TM1_em
+
+Steepest Descents converged to machine precision in 28770 steps,
+but did not reach the requested Fmax < 10.
+Potential Energy  = -1.0829706e+05
+Maximum force     =  1.5905204e+01 on atom 79
+Norm of force     =  1.0778955e+00
+
+gmx make_ndx -f TM1_CG_system_ions.gro -o index.ndx
+
+gmx grompp -f nvt.mdp -c TM1_em.gro -r TM1_em.gro -p system.top -n index.ndx -o TM1_nvt.tpr
+gmx mdrun -v -deffnm TM1_nvt
+
+
+               Core t (s)   Wall t (s)        (%)
+       Time:     4819.203     1204.801      400.0
+                 (ns/day)    (hour/ns)
+Performance:        7.171        3.347
+
+gmx grompp -f npt.mdp -c TM1_nvt.gro -r TM1_nvt.gro -t TM1_nvt.cpt -p system.top -n index.ndx -o TM1_npt.tpr
+gmx mdrun -deffnm TM1_npt
+
+               Core t (s)   Wall t (s)        (%)
+       Time:     5139.730     1284.932      400.0
+                 (ns/day)    (hour/ns)
+Performance:       67.242        0.357
+
+
+gmx grompp -f md.mdp -c TM1_npt.gro -t TM1_npt.cpt -p system.top -n index.ndx -o TM1_md.tpr
