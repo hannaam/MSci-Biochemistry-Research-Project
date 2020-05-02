@@ -1,1 +1,26 @@
-READMEY
+README
+
+All of the files in this repository are for the purpose of complementing the research paper produced for coursework. These files can also be used as a tool for further work. 
+
+First of all -
+B1AR_TM1TM1_MD_simulation
+- All of the files contained within this folder are needed in order to carry out the simulation from the beginning input of two helix structures. There is a file within the folder named ‘COMMANDS’ which instruct the user what commands are necessary and were carried out in this work. Example output files from the commands are included for reference. 
+
+The following outputs from the simulation run are required to be transferred onto a HPC to run an ensemble simulation.
+- Protein_A.itp
+- TM1TM1_npt.cpt
+- TM1TM1_npt.gro
+- system.top 
+- index.dx
+
+These files are already present in ‘B1AR_TM1TM1_ensemble_folder_for_HPC’ for completion. 
+
+This folder has then got to be moved onto a HPC. The submit50 script was then executed locally to product 50 scripts for the ensemble. These 50 scripts are then sent as jobs to run. 
+
+ANALYSIS
+- All coarse-grained output files “TM1TM1_md.gro’ are converted to atomistic representation for downstream analysis. Code was also created for analysing the coarse-grained structures. 
+
+- In this repository, the A2A_TM5TM5 martini and elastic network data is used as an example. 
+
+Crystal Structure Analysis
+- An example notebook showing code to analyse the distance between residues in a crystal structure
