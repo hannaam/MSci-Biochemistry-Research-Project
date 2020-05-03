@@ -6,7 +6,7 @@ All of the files in this repository are for the purpose of complementing the res
 
 This repository contains:
 * Files required to run coarse-grained molecular dynamic simulations presented in the coursework with example commands and files in B1AR_TM1TM1_MD_simulation. 
-* Files in the main repostiory are parameter files, topology files force field and scripts required for any CG-MD simulations.
+* Files in the main repository are parameter files, topology files force field and scripts required for any CG-MD simulations.
 * Set-up of a file to be transferred to HPC for the last step of the MD simulation to run an ensemble 
 * Code to calculate the 3D distance between atom residues for a PDB file and the resulting distance heatmap
 * Code for ensemble distance analysis for atomistic and coarse-grained files from molecular dynamic simulations
