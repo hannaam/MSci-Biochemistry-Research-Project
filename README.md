@@ -1,14 +1,14 @@
 # MSci-Biochemistry-Research-Project
 
-All of the files in this repository are for the purpose of complementing the research paper produced for coursework. These files can also be used as a tool for further work in the topic of coarse-grained molecular dynamic simulations. All of this work builds upon and complements previous work:
+All of the files in this repository are for the purpose of complementing the research paper produced for coursework. These files can also be used as a tool for further work in the topic of coarse-grained molecular dynamic simulations for predicting helix-helix interactions. All of this work builds upon and complements previous work:
 
 *Altwaijry, N. A., Baron, M., Wright, D. W., Coveney, P. V., and Townsend-Nicholson, A. (2017) An Ensemble-Based Protocol for the Computational Prediction of Helix-Helix Interactions in G Protein-Coupled Receptors using Coarse-Grained Molecular Dynamics. Journal of Chemical Theory and Computation. 13, 2254–2270*
 
 This repository contains:
-* Code to calculate the 3D distance between atom residues for a PDB file and the resulting distance heatmap
-* Code for ensemble distance analysis for atomistic and coarse-grained files from molecular dynamic simulations
 * Files required to run coarse-grained molecular dynamic simulations presented in the coursework with example commands and files
 * Set-up of a file to be transferred to HPC for the last step of the MD simulation to run an ensemble 
+* Code to calculate the 3D distance between atom residues for a PDB file and the resulting distance heatmap
+* Code for ensemble distance analysis for atomistic and coarse-grained files from molecular dynamic simulations
 
 The text below gives more detailed instructions for what is to be found in each folder. 
 
